@@ -1,0 +1,29 @@
+#app/app.kv
+
+#:import dp kivy.metrics.dp
+
+<HomeScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+
+        MDLabel:
+            text: "Web Scraper"
+            halign: "center"
+            font_style: "H4"
+
+        MDRaisedButton:
+            text: "Start Scraping"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.start_scrape()
+
+<ResultsScreen>:
+    MDLabel:
+        text: "Results will appear here"
+        halign: "center"
+
+<SettingsScreen>:
+    MDLabel:
+        text: "Settings"
+        halign: "center"
