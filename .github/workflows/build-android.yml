@@ -45,6 +45,19 @@ jobs:
             build-essential \
             uuid-dev \
             liblzma-dev
+      
+      # ---------------------------
+      - name: Accept Android SDK licenses
+        run:
+          yes | sdkmanager --licenses
+        
+      
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager \
+            "platform-tools" \
+            "platforms;android-34" \
+            "build-tools;35.0.0"
 
       # ---------- Python tooling ----------
       - name: Install Buildozer (pinned)
